@@ -1,0 +1,96 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Assets/Enemies/Trap/bullet.gd" type="Script" id=2]
+[ext_resource path="res://Scripts/audio_manager.gd" type="Script" id=3]
+[ext_resource path="res://Assets/Enemies/Trap/damage.gd" type="Script" id=4]
+[ext_resource path="res://Scenes/World_1/spit.tres" type="SpriteFrames" id=5]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 13, 3.25 )
+
+[sub_resource type="ParticlesMaterial" id=2]
+flag_disable_z = true
+gravity = Vector3( 0, 98, 0 )
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+
+[node name="bullet" type="KinematicBody2D"]
+position = Vector2( 1, 0 )
+rotation = 1.5708
+collision_layer = 3823
+collision_mask = 3823
+script = ExtResource( 2 )
+
+[node name="damage" type="Node2D" parent="."]
+position = Vector2( 1, 1 )
+script = ExtResource( 4 )
+
+[node name="hitbox" type="Area2D" parent="damage"]
+position = Vector2( 5.96046e-08, 1 )
+rotation = 1.5708
+
+[node name="attack_hitbox" type="CollisionPolygon2D" parent="damage/hitbox"]
+polygon = PoolVector2Array( -3, 14, 1, 14, 0.999999, -12, -1, -12, -3, -12 )
+
+[node name="audio_manager" type="Node" parent="damage"]
+pause_mode = 2
+script = ExtResource( 3 )
+
+[node name="music" type="Node" parent="damage/audio_manager"]
+
+[node name="music_player" type="AudioStreamPlayer" parent="damage/audio_manager/music"]
+volume_db = -5.0
+bus = "BGM"
+
+[node name="sfx" type="Node" parent="damage/audio_manager"]
+
+[node name="sfx_player_1" type="AudioStreamPlayer" parent="damage/audio_manager/sfx"]
+volume_db = -5.0
+bus = "SFX"
+
+[node name="sfx_player_2" type="AudioStreamPlayer" parent="damage/audio_manager/sfx"]
+volume_db = -5.0
+bus = "SFX"
+
+[node name="sfx_player_3" type="AudioStreamPlayer" parent="damage/audio_manager/sfx"]
+volume_db = -5.0
+bus = "SFX"
+
+[node name="hit_timer" type="Timer" parent="damage"]
+
+[node name="sprite" type="AnimatedSprite" parent="."]
+position = Vector2( -1, 2 )
+frames = ExtResource( 5 )
+frame = 1
+playing = true
+
+[node name="ray" type="RayCast2D" parent="."]
+position = Vector2( 4.37114e-08, 1 )
+rotation = -1.5708
+enabled = true
+cast_to = Vector2( 0, 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -0.249999, 1 )
+rotation = -1.5708
+shape = SubResource( 1 )
+disabled = true
+one_way_collision = true
+
+[node name="Particles2D" type="Particles2D" parent="."]
+position = Vector2( 5.96046e-08, 1 )
+rotation = 3.14159
+amount = 4
+process_material = SubResource( 2 )
+
+[node name="hitbox" type="Area2D" parent="."]
+collision_layer = 65534
+collision_mask = 65534
+
+[node name="attack_hitbox" type="CollisionPolygon2D" parent="hitbox"]
+polygon = PoolVector2Array( -9.99999, 4.00004, 13, 3.99995, 13, -2.00005, -10, -1.99996 )
+
+[connection signal="body_entered" from="damage/hitbox" to="damage" method="_on_hitbox_body_entered"]
+[connection signal="timeout" from="damage/hit_timer" to="damage" method="_on_hit_timer_timeout"]
+[connection signal="animation_finished" from="sprite" to="." method="_on_sprite_animation_finished"]
+[connection signal="area_entered" from="hitbox" to="." method="_on_hitbox_area_entered"]

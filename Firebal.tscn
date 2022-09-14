@@ -1,0 +1,288 @@
+[gd_scene load_steps=59 format=2]
+
+[ext_resource path="res://Scripts/Moving_Platform.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/audio_manager.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Jumping_Small_Fireball_14x45.png" type="Texture" id=3]
+[ext_resource path="res://Prefabs/platform.gd" type="Script" id=11]
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 3 )
+region = Rect2( 112, 0, 14, 45 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 3 )
+region = Rect2( 126, 0, 14, 45 )
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 3 )
+region = Rect2( 0, 45, 14, 45 )
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 3 )
+region = Rect2( 14, 45, 14, 45 )
+
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 3 )
+region = Rect2( 28, 45, 14, 45 )
+
+[sub_resource type="AtlasTexture" id=8]
+atlas = ExtResource( 3 )
+region = Rect2( 42, 45, 14, 45 )
+
+[sub_resource type="AtlasTexture" id=9]
+atlas = ExtResource( 3 )
+region = Rect2( 56, 45, 14, 45 )
+
+[sub_resource type="AtlasTexture" id=10]
+atlas = ExtResource( 3 )
+region = Rect2( 70, 45, 14, 45 )
+
+[sub_resource type="AtlasTexture" id=11]
+atlas = ExtResource( 3 )
+region = Rect2( 84, 45, 14, 45 )
+
+[sub_resource type="AtlasTexture" id=12]
+atlas = ExtResource( 3 )
+region = Rect2( 98, 45, 14, 45 )
+
+[sub_resource type="AtlasTexture" id=13]
+atlas = ExtResource( 3 )
+region = Rect2( 112, 45, 14, 45 )
+
+[sub_resource type="AtlasTexture" id=14]
+atlas = ExtResource( 3 )
+region = Rect2( 126, 45, 14, 45 )
+
+[sub_resource type="AtlasTexture" id=15]
+atlas = ExtResource( 3 )
+region = Rect2( 0, 90, 14, 45 )
+
+[sub_resource type="AtlasTexture" id=16]
+atlas = ExtResource( 3 )
+region = Rect2( 14, 90, 14, 45 )
+
+[sub_resource type="AtlasTexture" id=17]
+atlas = ExtResource( 3 )
+region = Rect2( 28, 90, 14, 45 )
+
+[sub_resource type="AtlasTexture" id=18]
+atlas = ExtResource( 3 )
+region = Rect2( 42, 90, 14, 45 )
+
+[sub_resource type="AtlasTexture" id=19]
+atlas = ExtResource( 3 )
+region = Rect2( 56, 90, 14, 45 )
+
+[sub_resource type="AtlasTexture" id=20]
+atlas = ExtResource( 3 )
+region = Rect2( 70, 90, 14, 45 )
+
+[sub_resource type="AtlasTexture" id=21]
+atlas = ExtResource( 3 )
+region = Rect2( 84, 90, 14, 45 )
+
+[sub_resource type="AtlasTexture" id=22]
+atlas = ExtResource( 3 )
+region = Rect2( 98, 90, 14, 45 )
+
+[sub_resource type="AtlasTexture" id=23]
+atlas = ExtResource( 3 )
+region = Rect2( 112, 90, 14, 45 )
+
+[sub_resource type="AtlasTexture" id=24]
+atlas = ExtResource( 3 )
+region = Rect2( 126, 90, 14, 45 )
+
+[sub_resource type="AtlasTexture" id=25]
+atlas = ExtResource( 3 )
+region = Rect2( 0, 135, 14, 45 )
+
+[sub_resource type="AtlasTexture" id=26]
+atlas = ExtResource( 3 )
+region = Rect2( 14, 135, 14, 45 )
+
+[sub_resource type="AtlasTexture" id=27]
+atlas = ExtResource( 3 )
+region = Rect2( 28, 135, 14, 45 )
+
+[sub_resource type="AtlasTexture" id=28]
+atlas = ExtResource( 3 )
+region = Rect2( 42, 135, 14, 45 )
+
+[sub_resource type="AtlasTexture" id=29]
+atlas = ExtResource( 3 )
+region = Rect2( 56, 135, 14, 45 )
+
+[sub_resource type="AtlasTexture" id=30]
+atlas = ExtResource( 3 )
+region = Rect2( 70, 135, 14, 45 )
+
+[sub_resource type="AtlasTexture" id=31]
+atlas = ExtResource( 3 )
+region = Rect2( 84, 135, 14, 45 )
+
+[sub_resource type="AtlasTexture" id=32]
+atlas = ExtResource( 3 )
+region = Rect2( 98, 135, 14, 45 )
+
+[sub_resource type="AtlasTexture" id=33]
+atlas = ExtResource( 3 )
+region = Rect2( 112, 135, 14, 45 )
+
+[sub_resource type="AtlasTexture" id=34]
+atlas = ExtResource( 3 )
+region = Rect2( 126, 135, 14, 45 )
+
+[sub_resource type="AtlasTexture" id=35]
+atlas = ExtResource( 3 )
+region = Rect2( 0, 180, 14, 45 )
+
+[sub_resource type="AtlasTexture" id=36]
+atlas = ExtResource( 3 )
+region = Rect2( 14, 180, 14, 45 )
+
+[sub_resource type="AtlasTexture" id=37]
+atlas = ExtResource( 3 )
+region = Rect2( 28, 180, 14, 45 )
+
+[sub_resource type="AtlasTexture" id=38]
+atlas = ExtResource( 3 )
+region = Rect2( 42, 180, 14, 45 )
+
+[sub_resource type="AtlasTexture" id=39]
+atlas = ExtResource( 3 )
+region = Rect2( 56, 180, 14, 45 )
+
+[sub_resource type="AtlasTexture" id=40]
+atlas = ExtResource( 3 )
+region = Rect2( 70, 180, 14, 45 )
+
+[sub_resource type="AtlasTexture" id=41]
+atlas = ExtResource( 3 )
+region = Rect2( 84, 180, 14, 45 )
+
+[sub_resource type="AtlasTexture" id=42]
+atlas = ExtResource( 3 )
+region = Rect2( 98, 180, 14, 45 )
+
+[sub_resource type="AtlasTexture" id=43]
+atlas = ExtResource( 3 )
+region = Rect2( 112, 180, 14, 45 )
+
+[sub_resource type="AtlasTexture" id=44]
+atlas = ExtResource( 3 )
+region = Rect2( 126, 180, 14, 45 )
+
+[sub_resource type="AtlasTexture" id=45]
+atlas = ExtResource( 3 )
+region = Rect2( 0, 225, 14, 45 )
+
+[sub_resource type="AtlasTexture" id=46]
+atlas = ExtResource( 3 )
+region = Rect2( 14, 225, 14, 45 )
+
+[sub_resource type="AtlasTexture" id=47]
+atlas = ExtResource( 3 )
+region = Rect2( 28, 225, 14, 45 )
+
+[sub_resource type="AtlasTexture" id=48]
+atlas = ExtResource( 3 )
+region = Rect2( 42, 225, 14, 45 )
+
+[sub_resource type="AtlasTexture" id=49]
+atlas = ExtResource( 3 )
+region = Rect2( 56, 225, 14, 45 )
+
+[sub_resource type="AtlasTexture" id=50]
+atlas = ExtResource( 3 )
+region = Rect2( 70, 225, 14, 45 )
+
+[sub_resource type="AtlasTexture" id=51]
+atlas = ExtResource( 3 )
+region = Rect2( 84, 225, 14, 45 )
+
+[sub_resource type="AtlasTexture" id=52]
+atlas = ExtResource( 3 )
+region = Rect2( 98, 225, 14, 45 )
+
+[sub_resource type="AtlasTexture" id=53]
+atlas = ExtResource( 3 )
+region = Rect2( 112, 225, 14, 45 )
+
+[sub_resource type="AtlasTexture" id=54]
+atlas = ExtResource( 3 )
+region = Rect2( 126, 225, 14, 45 )
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 26 ), SubResource( 27 ), SubResource( 28 ), SubResource( 29 ), SubResource( 30 ), SubResource( 31 ), SubResource( 32 ), SubResource( 33 ), SubResource( 34 ), SubResource( 35 ), SubResource( 36 ), SubResource( 37 ), SubResource( 38 ), SubResource( 39 ), SubResource( 40 ), SubResource( 41 ), SubResource( 42 ), SubResource( 43 ), SubResource( 44 ), SubResource( 45 ), SubResource( 46 ), SubResource( 47 ), SubResource( 48 ), SubResource( 49 ), SubResource( 50 ), SubResource( 51 ), SubResource( 52 ), SubResource( 53 ), SubResource( 54 ) ],
+"loop": true,
+"name": "flight",
+"speed": 30.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 1.5, 1.5 )
+
+[node name="Moving_Platform" type="Node2D"]
+script = ExtResource( 1 )
+horizontal = false
+distance = 100
+
+[node name="platform" type="KinematicBody2D" parent="."]
+collision_layer = 16
+collision_mask = 8
+script = ExtResource( 11 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="platform"]
+position = Vector2( 4, 2 )
+frames = SubResource( 2 )
+animation = "flight"
+frame = 28
+playing = true
+
+[node name="hitbox" type="Area2D" parent="platform"]
+
+[node name="attack_hitbox" type="CollisionPolygon2D" parent="platform/hitbox"]
+position = Vector2( 2, 7 )
+rotation = -1.5708
+scale = Vector2( 0.878, 0.893 )
+polygon = PoolVector2Array( 25, 12, 25, -9, -17, -9, -17, 1, -17, 12 )
+
+[node name="collision" type="CollisionShape2D" parent="platform"]
+position = Vector2( 4.5, 9.5 )
+shape = SubResource( 1 )
+one_way_collision = true
+
+[node name="hit_timer" type="Timer" parent="platform"]
+
+[node name="audio_manager" type="Node" parent="platform"]
+pause_mode = 2
+script = ExtResource( 2 )
+
+[node name="music" type="Node" parent="platform/audio_manager"]
+
+[node name="music_player" type="AudioStreamPlayer" parent="platform/audio_manager/music"]
+volume_db = -5.0
+bus = "BGM"
+
+[node name="sfx" type="Node" parent="platform/audio_manager"]
+
+[node name="sfx_player_1" type="AudioStreamPlayer" parent="platform/audio_manager/sfx"]
+volume_db = -5.0
+bus = "SFX"
+
+[node name="sfx_player_2" type="AudioStreamPlayer" parent="platform/audio_manager/sfx"]
+volume_db = -5.0
+bus = "SFX"
+
+[node name="sfx_player_3" type="AudioStreamPlayer" parent="platform/audio_manager/sfx"]
+volume_db = -5.0
+bus = "SFX"
+
+[node name="Tween" type="Tween" parent="."]
+repeat = true
+playback/repeat = true
+
+[connection signal="body_entered" from="platform/hitbox" to="platform" method="_on_hitbox_body_entered"]
+[connection signal="timeout" from="platform/hit_timer" to="platform" method="_on_hit_timer_timeout"]
